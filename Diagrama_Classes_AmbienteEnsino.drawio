@@ -1,0 +1,72 @@
+<mxfile host="Electron" agent="ChatGPT">
+  <diagram id="uml-classes" name="Diagrama de Classes">
+    <mxGraphModel dx="1192" dy="1081" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Professor&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- nome: String&lt;br&gt;- email: String&lt;hr&gt;+ exibirDados(): void" vertex="1">
+          <mxGeometry height="180" width="245" x="60" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Aluno&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- nome: String&lt;br&gt;- email: String&lt;hr&gt;+ exibirDados(): void" vertex="1">
+          <mxGeometry height="180" width="245" x="60" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Turma&lt;/b&gt;&lt;hr&gt;- identificador: String&lt;br&gt;- professor: Professor&lt;hr&gt;+ adicionarAluno(): void" vertex="1">
+          <mxGeometry height="180" width="245" x="370" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Disciplina&lt;/b&gt;&lt;hr&gt;- nome: String&lt;br&gt;- codigo: String&lt;hr&gt;+ exibirDados(): void" vertex="1">
+          <mxGeometry height="180" width="245" x="680" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Matricula&lt;/b&gt;&lt;hr&gt;- ativa: boolean&lt;br&gt;- aluno: Aluno&lt;br&gt;- turma: Turma&lt;hr&gt;+ verificarAtiva(): boolean" vertex="1">
+          <mxGeometry height="180" width="245" x="370" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Atividade&lt;/b&gt;&lt;hr&gt;- titulo: String&lt;br&gt;- prazo: data&lt;br&gt;- estado: String&lt;hr&gt;+ publicar(): void&lt;br&gt;+ verificarPrazo(): boolean" vertex="1">
+          <mxGeometry height="180" width="245" x="990" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Entrega&lt;/b&gt;&lt;hr&gt;- aluno: Aluno&lt;br&gt;- atividade: Atividade&lt;br&gt;- status: String&lt;hr&gt;+ registrar(): void&lt;br&gt;+ exibirDados(): void" vertex="1">
+          <mxGeometry height="180" width="245" x="990" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Avaliacao&lt;/b&gt;&lt;hr&gt;- nota: double&lt;br&gt;- feedback: String&lt;hr&gt;+ avaliar(): void&lt;br&gt;+ exibirDados(): void" vertex="1">
+          <mxGeometry height="180" width="245" x="990" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;align=left;verticalAlign=top;spacing=12;fontSize=14;" value="&lt;b&gt;Sistema&lt;/b&gt;&lt;hr&gt;- professores: lista&lt;br&gt;- alunos: lista&lt;br&gt;- turmas: lista&lt;hr&gt;+ listarProfessores(): void&lt;br&gt;+ listarAlunos(): void&lt;br&gt;+ listarTurmas(): void&lt;br&gt;+ registrarAvaliacao(): void" vertex="1">
+          <mxGeometry height="180" width="245" x="370" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" source="2" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=1;endLabel=0..*;" target="4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" source="4" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=0..*;endLabel=1;" target="5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" source="3" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=1;endLabel=0..*;" target="6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" source="4" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=1;endLabel=0..*;" target="6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="5" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=1;endLabel=0..*;" target="7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" source="7" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=1;endLabel=0..*;" target="8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" source="3" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=1;endLabel=0..*;" target="8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" source="8" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=1;endLabel=0..1;" target="9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" edge="1" parent="1" source="10" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=;endLabel=;" target="4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="493" y="480" />
+              <mxPoint x="493" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" edge="1" parent="1" source="10" style="endArrow=none;startArrow=none;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontColor=#000000;startLabel=;endLabel=;" target="3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
